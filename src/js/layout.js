@@ -9,6 +9,7 @@ import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import { Card } from "./component/card";
 
 //create your first component
 const Layout = () => {
@@ -21,6 +22,7 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
+					<Card title="A Warm Welcome!" text="Lorem Ipsum es simplemente el texto de" />
 					<Switch>
 						<Route exact path="/">
 							<Home />
