@@ -22,7 +22,6 @@ const Layout = () => {
 			<BrowserRouter basename={basename}>
 				<ScrollToTop>
 					<Navbar />
-					<Card title="A Warm Welcome!" text="Lorem Ipsum es simplemente el texto de" />
 					<Switch>
 						<Route exact path="/">
 							<Home />
