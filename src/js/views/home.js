@@ -4,14 +4,21 @@ import "../../styles/home.scss";
 import { Card } from "../component/card.js";
 
 export const Home = () => {
-	const [planets, setPlanets] = useState(0);
+	const [planets, setPlanets] = useState();
 
 	useEffect(() => {
 		fetch("https://www.swapi.tech/api/planets")
 			.then(response => response.json())
-			.then(data => console.log(data.results))
+			.then(data => setPlanets(data.results))
 			.catch(err => console.error(err));
 	}, []);
 
-	return <div className="text-center mt-5">{/* <Card name="A Warm Welcome!" uid="" url="" /> */}</div>;
+	let planetCards = [];
+	if (planets) {
+		planetCards = planets.map((planet, key) => {
+			return <Card name={planet.name} uid={planet.uid} url={planet.url} key={key} />;
+		});
+	}
+
+	return <div>{planetCards}</div>;
 };
