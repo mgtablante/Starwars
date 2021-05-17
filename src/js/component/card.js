@@ -13,7 +13,7 @@ export function Card(props) {
 			<img className="card-img-top" src="http://www.servithermic.cl/images/400X200.gif" />
 			<div className="card-body">
 				<h5 className="card-title text-center">{props.name}</h5>
-				<p className="card-text">{props.uid}</p>
+				{props.uid}
 				<div className="btn-wrapper text-center d-flex justify-content-between">
 					<a className="btn btn-outline-primary  btn-sm text-primary d-flex align-items-center">Larn more!</a>
 					<a className="btn btn-outline-danger text-danger"> ♡</a>
