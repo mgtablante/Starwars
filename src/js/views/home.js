@@ -53,9 +53,13 @@ export const Home = () => {
 
 	return (
 		<div className="home">
+			<h1> Characters</h1>
 			<div className="planet d-flex flex-row">{planetCards}</div>
-			<div className="people d-flex flex-row">>{peopleCards}</div>
-			<div className="vehicles d-flex flex-row">>{vehiclesCards}</div>
+			<h1>Planets</h1>
+			<div className="people d-flex flex-row">{peopleCards}</div>
+			<h1>People</h1>
+			<div className="vehicles d-flex flex-row">{vehiclesCards}</div>
+			<h1>Vehicles</h1>
 		</div>
 	);
 };

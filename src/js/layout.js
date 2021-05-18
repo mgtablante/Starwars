@@ -32,9 +32,6 @@ const Layout = () => {
 						<Route exact path="/single/:theid">
 							<Single />
 						</Route>
-						<Route>
-							<h1>Not found!</h1>
-						</Route>
 					</Switch>
 					<Footer />
 				</ScrollToTop>

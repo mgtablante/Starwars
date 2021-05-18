@@ -1,5 +1,5 @@
 .home{
-    background: purple;
+    background: grey;
     width: 100%; height: auto;
 }
 .planet{
@@ -13,4 +13,8 @@
 .vehicles{
     overflow-x: auto;
 }
-// style={{ width: "35rem", height: "35rem" }}
+
+#h1{
+    color: goldenrod;
+    font-weight: bold;
+}
