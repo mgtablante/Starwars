@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import "../../styles/card.scss";
 //create your first component
 export function Card(props) {
 	useEffect(() => {
@@ -9,7 +10,7 @@ export function Card(props) {
 			.catch(err => console.error(err));
 	}, []);
 	return (
-		<div className="card" style={{ width: "35rem", height: "35rem" }}>
+		<div className="card">
 			<img className="card-img-top" src="http://www.servithermic.cl/images/400X200.gif" />
 			<div className="card-body">
 				<h5 className="card-title text-center">{props.name}</h5>

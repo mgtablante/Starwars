@@ -52,10 +52,10 @@ export const Home = () => {
 	}
 
 	return (
-		<div>
-			{planetCards}
-			{peopleCards}
-			{vehiclesCards}
+		<div className="home">
+			<div className="planet d-flex flex-row">{planetCards}</div>
+			<div className="people d-flex flex-row">>{peopleCards}</div>
+			<div className="vehicles d-flex flex-row">>{vehiclesCards}</div>
 		</div>
 	);
 };

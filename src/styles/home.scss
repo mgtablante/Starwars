@@ -1,3 +1,16 @@
-.home {
+.home{
     background: purple;
+    width: 100%; height: auto;
 }
+.planet{
+    overflow-x: auto;
+}
+
+.people{
+    overflow-x: auto;
+}
+
+.vehicles{
+    overflow-x: auto;
+}
+// style={{ width: "35rem", height: "35rem" }}
