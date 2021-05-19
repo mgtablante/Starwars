@@ -14,7 +14,9 @@
     overflow-x: auto;
 }
 
-#h1{
-    color: goldenrod;
-    font-weight: bold;
+.h1{
+      @import url(https://allfont.es/allfont.css?fonts=star-jedi);
+    font-family: 'Star Jedi', arial;
+    font-size: 48px;
+    text-shadow: 4px 4px 4px #aaa;
 }
