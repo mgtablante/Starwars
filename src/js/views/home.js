@@ -16,7 +16,18 @@ export const Home = () => {
 	let planetCards = [];
 	if (planets) {
 		planetCards = planets.map((planet, key) => {
-			return <Card name={planet.name} uid={planet.uid} url={planet.url} key={key} />;
+			return (
+				<Card name={planet.name} uid={planet.uid} url={planet.url} key={key}>
+					<p>
+						Population:
+						{planet.population}
+					</p>
+					<p>
+						Terrain:
+						{planet.terrain}
+					</p>
+				</Card>
+			);
 		});
 	}
 
@@ -32,7 +43,13 @@ export const Home = () => {
 	let peopleCards = [];
 	if (people) {
 		peopleCards = people.map((people, key) => {
-			return <Card name={people.name} uid={people.uid} url={people.url} key={key} />;
+			return (
+				<Card name={people.name} uid={people.uid} url={people.url} key={key}>
+					<p>Gender: {people.gender}</p>
+					<p>Hair color: {people.hair_color}</p>
+					<p>Eye color: {people.eye_color}</p>
+				</Card>
+			);
 		});
 	}
 	const [vehicles, setVehicles] = useState();
@@ -54,12 +71,12 @@ export const Home = () => {
 	return (
 		<div className="home">
 			<h1 className="text-warning"> Characters</h1>
-			<div className="planet d-flex flex-row">{planetCards}</div>
 			<h1 className="text-warning">Planets</h1>
-			<div className="people d-flex flex-row">{peopleCards}</div>
+			<div className="planet d-flex flex-row">{planetCards}</div>
 			<h1 className="text-warning">People</h1>
-			<div className="vehicles d-flex flex-row">{vehiclesCards}</div>
+			<div className="people d-flex flex-row">{peopleCards}</div>
 			<h1 className="text-warning">Vehicles</h1>
+			<div className="vehicles d-flex flex-row">{vehiclesCards}</div>
 		</div>
 	);
 };

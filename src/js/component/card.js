@@ -16,6 +16,7 @@ export function Card(props) {
 				<h5 className="card-title text-center">{props.name}</h5>
 				{props.uid}
 				<div className="btn-wrapper text-center d-flex justify-content-between">
+					{props.children}
 					<a className="btn btn-outline-primary  btn-sm text-primary d-flex align-items-center">Larn more!</a>
 					<a className="btn btn-outline-danger text-danger"> ♡</a>
 				</div>
@@ -26,5 +27,6 @@ export function Card(props) {
 Card.propTypes = {
 	uid: PropTypes.string,
 	name: PropTypes.string,
-	url: PropTypes.string
+	url: PropTypes.string,
+	children: PropTypes.string
 };
