@@ -2,3 +2,12 @@
     max-width: 35rem; min-width: 30rem ;
     margin: 1rem;
 } 
+
+.cardScrollable{
+    overflow-x: scroll;
+    /* que pasa aquí */
+}
+
+.button{
+    border: 10px solid red;
+}

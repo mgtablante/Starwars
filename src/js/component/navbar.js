@@ -1,7 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useEffect } from "react";
 
-export const Navbar = () => {
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
+
+export function Navbar(props) {
+	// const { store, actions } = useContext(Context);
+
+	useEffect(() => {
+		localStorage.getItem("favoriteId") ? actions.setFavorite(localStorage.getItem("favoriteId").split(",")) : "";
+	}, []);
+
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
@@ -13,47 +21,33 @@ export const Navbar = () => {
 					/>
 				</a>
 			</Link>
-			<div className="ml-auto">
-				<Link to="/demo">
-					<div className="dropdown">
-						<button
-							className="btn-lg btn-secondary dropdown-toggle"
-							type="button"
-							id="dropdownMenuButton"
-							data-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false">
-							Favorites
-						</button>
-						<div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-							{/* <a className="dropdown-item" href="#">
-								Action
-							</a>
-							<a className="dropdown-item" href="#">
-								Another action
-							</a>
-							<a className="dropdown-item" href="#">
-								Something else here
-							</a> */}
-						</div>
-					</div>
-					{/* <ul className="dropdown-menu" role="menu">
-						<li>
-							<a href="https://3000-tomato-mammal-xipysqpp.ws-eu04.gitpod.io/">Acción #1</a>
-						</li>
-						<li>
-							<a href="#">Acción #2</a>
-						</li>
-						<li>
-							<a href="#">Acción #3</a>
-						</li>
-						<li className="divider" />
-						<li>
-							<a href="#">Acción #4</a>
-						</li>
-					</ul> */}
-				</Link>
+			<div className="dropdown">
+				{/* <button
+					className="btn btn-primary dropdown-toggle"
+					type="button"
+					id="dropdownMenuButton"
+					data-toggle="dropdown"
+					aria-haspopup="true"
+					aria-expanded="false">
+					Favorites {store.favorites.length}
+				</button> */}
+				{/* <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					{store.favorites.map((value, index) => {
+						return (
+							<div key={index} className="dropdown-item">
+								{value}
+								<button
+									onClick={event => actions.deleteList(value)}
+									type="button"
+									className="close"
+									aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
+						);
+					})}
+				</div> */}
 			</div>
 		</nav>
 	);
-};
+}
