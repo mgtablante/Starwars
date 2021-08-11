@@ -11,11 +11,13 @@ export function Card(props) {
 	// console.log(props.type);
 	// console.log(props.resource);
 	// useEffect(() => {
-	// 	fetch(props.url)
+	// 	fetch(props.data.url)
 	// 		.then(response => response.json())
 	// 		.then(data => console.log(data.result))
 	// 		.catch(err => console.error(err));
 	// }, []);
+	// let isFavorite = store.favorites.find(element => element.uid === props.data.uid) !== undefined;
+
 	return (
 		<div className="card">
 			<img className="card-img-top" src="http://www.servithermic.cl/images/400X200.gif" />
@@ -27,11 +29,10 @@ export function Card(props) {
 					<Link type="button" className="btn btn-primary">
 						Learn more!
 					</Link>
-					{/* <button
-						type="button"
-						className={store.favorites.includes(title) ? "btn btn-success" : "btn btn-warning"}
-						onClick={event => actions.addList(title)}>
-						{store.favorites.includes(title) ? "Delete" : "Add"}
+					{/* <button className="btn btn-outline-warning mt-2" onClick={event => actions.addFavorites(details)}>
+						<span>
+							<i className={isFavorite ? "fas fa-heart" : "far fa-heart"} />
+						</span>
 					</button> */}
 				</div>
 			</div>
@@ -43,5 +44,6 @@ Card.propTypes = {
 	name: PropTypes.string,
 	url: PropTypes.string,
 	children: PropTypes.string,
-	title: PropTypes.string
+	title: PropTypes.string,
+	data: PropTypes.string
 };

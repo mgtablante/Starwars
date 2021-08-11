@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 
 export function People(props) {
 	const params = useParams();
-	const { store, actions } = useContext(Context);
+	// const { store, actions } = useContext(Context);
 
 	let person = store.people[params.index];
 

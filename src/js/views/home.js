@@ -3,7 +3,7 @@ import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 import { Card } from "../component/card.js";
 
-const Home = props => {
+export const Home = () => {
 	const { store, actions } = useContext(Context);
 	useEffect(() => {
 		actions.getPeople();
@@ -56,4 +56,3 @@ const Home = props => {
 		</div>
 	);
 };
-export default Home;
