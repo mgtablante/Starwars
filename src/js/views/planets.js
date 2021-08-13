@@ -2,18 +2,18 @@ import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-const People = props => {
+const Planets = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	useEffect(() => {
-		actions.getpeopleLive(params.theid);
+		actions.getplanetsLive(params.theid);
 	}, []);
 
 	return (
 		<div>
 			<div className="jumbotron-fluid mx-5 my-5 d-flex flex-row">
 				<div className="left-side d-inline-block">
-					<img src="https://cdn.shopify.com/s/files/1/0190/5436/2724/articles/star_wars_personajes_800x.jpg?v=1616087475" />
+					<img src="https://images-cdn.9gag.com/photo/aB8b5rQ_700b.jpg" />
 				</div>
 				<div className="right-side d-inline-block">
 					<h1 className="text-center text-monospace" />
@@ -31,27 +31,15 @@ const People = props => {
 			<div className="divider bg-danger" />
 			{store.peopleLive ? (
 				<div className="row d-flex ml-5">
+					<div className="col-2 text-danger">Name: {store.planetsLive.name} </div>
+					<div className="col-2 text-danger">Climate: {store.planetsLive.name} </div>
 					<div className="col-2 text-danger">
-						Name:
-						{store.peopleLive.name}{" "}
+						Population:
+						{store.planetsLive.name}{" "}
 					</div>
-					<div className="col-2 text-danger">
-						Birth year:
-						{store.peopleLive.birth_year}{" "}
-					</div>
-					<div className="col-2 text-danger">
-						Gender:
-						{store.peopleLive.gender}{" "}
-					</div>
-					<div className="col-2 text-danger">
-						Skin color:
-						{store.peopleLive.skin_color}{" "}
-					</div>
-					<div className="col-2 text-danger">Hair color: {store.peopleLive.hair_color}</div>
-					<div className="col-2 text-danger">
-						Mass:
-						{store.peopleLive.mass}{" "}
-					</div>
+					<div className="col-2 text-danger">Orbital Period: {store.planetsLive.name}</div>
+					<div className="col-2 text-danger">Rotation Period: {store.planetsLive.name}</div>
+					<div className="col-2 text-danger">Diameter: {store.planetsLive.name}</div>
 				</div>
 			) : (
 				""
@@ -59,4 +47,4 @@ const People = props => {
 		</div>
 	);
 };
-export default People;
+export default Planets;

@@ -2,18 +2,18 @@ import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 
-const People = props => {
+const Vehicles = props => {
 	const { store, actions } = useContext(Context);
 	const params = useParams();
 	useEffect(() => {
-		actions.getpeopleLive(params.theid);
+		actions.getvehiclesLive(params.theid);
 	}, []);
 
 	return (
 		<div>
 			<div className="jumbotron-fluid mx-5 my-5 d-flex flex-row">
 				<div className="left-side d-inline-block">
-					<img src="https://cdn.shopify.com/s/files/1/0190/5436/2724/articles/star_wars_personajes_800x.jpg?v=1616087475" />
+					<img src="https://i.pinimg.com/736x/d1/10/57/d11057556bbafcf18f4122cd69537340.jpg" />
 				</div>
 				<div className="right-side d-inline-block">
 					<h1 className="text-center text-monospace" />
@@ -33,24 +33,26 @@ const People = props => {
 				<div className="row d-flex ml-5">
 					<div className="col-2 text-danger">
 						Name:
-						{store.peopleLive.name}{" "}
+						{store.vehiclesLive.name}{" "}
 					</div>
 					<div className="col-2 text-danger">
-						Birth year:
-						{store.peopleLive.birth_year}{" "}
+						Cargo capacity:
+						{store.vehiclesLive.cargo_capacity}{" "}
 					</div>
 					<div className="col-2 text-danger">
-						Gender:
-						{store.peopleLive.gender}{" "}
+						Consumables:
+						{store.vehiclesLive.consumables}{" "}
 					</div>
 					<div className="col-2 text-danger">
-						Skin color:
-						{store.peopleLive.skin_color}{" "}
+						Crew:
+						{store.vehiclesLive.crew}{" "}
 					</div>
-					<div className="col-2 text-danger">Hair color: {store.peopleLive.hair_color}</div>
 					<div className="col-2 text-danger">
-						Mass:
-						{store.peopleLive.mass}{" "}
+						Max atmosphering speed: {store.vehiclesLive.max_atmosphering_speed}
+					</div>
+					<div className="col-2 text-danger">
+						Model:
+						{store.vehiclesLive.model}{" "}
 					</div>
 				</div>
 			) : (
@@ -59,4 +61,4 @@ const People = props => {
 		</div>
 	);
 };
-export default People;
+export default Vehicles;

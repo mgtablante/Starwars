@@ -4,7 +4,8 @@ import Context from "../store/appContext";
 import { Link } from "react-router-dom";
 import "../../styles/card.scss";
 //create your first component
-export function Card(props) {
+
+const Card = props => {
 	// const { store, actions } = useContext(Context);
 
 	// const url = "/" + props.type + "/" + props.url;
@@ -17,7 +18,9 @@ export function Card(props) {
 	// 		.catch(err => console.error(err));
 	// }, []);
 	// let isFavorite = store.favorites.find(element => element.uid === props.data.uid) !== undefined;
-
+	let cardDetail = props.url.split("/");
+	let index = cardDetail[cardDetail.length - 2];
+	let endpoint = cardDetail[cardDetail.length - 3];
 	return (
 		<div className="card">
 			<img className="card-img-top" src="http://www.servithermic.cl/images/400X200.gif" />
@@ -26,9 +29,9 @@ export function Card(props) {
 				{props.uid}
 				{props.children}
 				<div className="btn-wrapper text-center d-flex justify-content-between">
-					<Link type="button" className="btn btn-primary">
-						Learn more!
-					</Link>
+					<Link to={endpoint + "/" + index} className="link_to">
+						<button className="btn">Learn more</button>
+					</Link>{" "}
 					{/* <button className="btn btn-outline-warning mt-2" onClick={event => actions.addFavorites(details)}>
 						<span>
 							<i className={isFavorite ? "fas fa-heart" : "far fa-heart"} />
@@ -38,12 +41,16 @@ export function Card(props) {
 			</div>
 		</div>
 	);
-}
+};
+export default Card;
+
 Card.propTypes = {
 	uid: PropTypes.string,
 	name: PropTypes.string,
 	url: PropTypes.string,
 	children: PropTypes.string,
 	title: PropTypes.string,
-	data: PropTypes.string
+	data: PropTypes.string,
+	resource: PropTypes.string,
+	type: PropTypes.string
 };
